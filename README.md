@@ -55,7 +55,7 @@ or
 in my case.
 
 ### How can I deploy a topology?
-#### Running in the environment already with storm installed
+#### Running in the environment with storm installed
 Since the nimbus host and port are not default, you need to specify where the nimbus host is, and what is the nimbus port number.<br/>
 Following the example above, after discovering the nimbus host IP (could be localhost, could be our docker VM ip as in the case of boot2docker), run the following command:
 
