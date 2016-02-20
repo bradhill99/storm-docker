@@ -12,6 +12,8 @@ nimbus:
     - "22"
   links: 
     - zookeeper:zk
+  volumes:
+    - /home/vagrant:/home/storm
 supervisor:
   image: wurstmeister/storm-supervisor
   ports:

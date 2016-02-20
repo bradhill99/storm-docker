@@ -55,10 +55,14 @@ or
 in my case.
 
 ### How can I deploy a topology?
+#### Running in the environment already with storm installed
 Since the nimbus host and port are not default, you need to specify where the nimbus host is, and what is the nimbus port number.<br/>
 Following the example above, after discovering the nimbus host IP (could be localhost, could be our docker VM ip as in the case of boot2docker), run the following command:
 
     storm jar target/your-topology-fat-jar.jar com.your.package.AndTopology topology-name -c nimbus.host=192.168.59.103 -c nimbus.thrift.port=49627
+#### Running in the environment without storm installed
+You need to create a docker storage that can make you shared your storm jar files between host and nimbus container, which I already did. (See docker-compose.yml)
+    docker exec <nimbus docker name> storm jar /home/storm/your-topology-fat-jar.jar com.your.package.AndTopology topology-name
 
 ### How can I connect to one of the containers?
 Find the forwarded ssh port for the container you wish to connect to (use `docker-compose ps`)
